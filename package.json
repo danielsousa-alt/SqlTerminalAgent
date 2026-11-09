@@ -6,7 +6,8 @@
     "dev": "node --env-file=.env.local --watch src/index.js",
     "seed": "node src/seed.js",
     "ingest": "node src/ingest.js",
-    "env:setup": "node -e \"require('node:fs').copyFileSync('.env.example', '.env.local')\""
+    "env:setup": "node -e \"require('node:fs').copyFileSync('.env.example', '.env.local')\"",
+    "test": "node --test src/*.spec.js"
   },
   "license": "ISC",
   "type": "module",
