@@ -4,3 +4,7 @@ access.log
 *.log
 
 *.db
+
+*.env
+*.env.*
+!.env.example
