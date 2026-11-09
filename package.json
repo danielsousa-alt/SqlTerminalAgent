@@ -2,6 +2,8 @@
   "name": "sql-terminal-agent",
   "version": "1.0.0",
   "scripts": {
+    "start": "node --env-file=.env.local src/index.js",
+    "dev": "node --env-file=.env.local --watch src/index.js",
     "seed": "node src/seed.js",
     "ingest": "node src/ingest.js",
     "env:setup": "node -e \"require('node:fs').copyFileSync('.env.example', '.env.local')\""
