@@ -1,3 +1,6 @@
 node_modules
 
 access.log
+*.log
+
+*.db

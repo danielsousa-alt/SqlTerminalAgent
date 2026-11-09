@@ -18,6 +18,7 @@ const stream = createWriteStream(LOG_FILE);
 
 function generateUser() {
     return {
+        id: faker.string.uuid(),
         ip: faker.internet.ipv4(),
         username: faker.internet.userName(),
         first_name: faker.person.firstName(),
@@ -27,7 +28,6 @@ function generateUser() {
         job_area: faker.person.jobArea(),
         company: faker.company.name(),
         job_title: faker.person.jobTitle(),
-        id: faker.string.uuid(),
     }
 }
 
