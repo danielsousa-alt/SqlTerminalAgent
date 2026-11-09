@@ -1,8 +1,7 @@
 import {createWriteStream, statSync} from "node:fs";
 import {faker} from "@faker-js/faker";
+import { LOG_FILE, LOG_INTERVAL } from "./constants.js";
 
-const LOG_FILE = "access.log";
-const LOG_INTERVAL = 10000;
 const maxRecords = Number(process.argv[2]) || 10000;
 
 if(
@@ -18,7 +17,6 @@ const stream = createWriteStream(LOG_FILE);
 
 function generateUser() {
     return {
-        id: faker.string.uuid(),
         ip: faker.internet.ipv4(),
         username: faker.internet.userName(),
         first_name: faker.person.firstName(),
@@ -34,6 +32,7 @@ function generateUser() {
 function generateLogEntry(user) {
     return {
         ...user,
+        id: faker.string.uuid(),
         timestamp: faker.date.recent().toISOString(),
     }
 }
